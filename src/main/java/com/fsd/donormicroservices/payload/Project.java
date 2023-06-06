@@ -1,9 +1,5 @@
 package com.fsd.donormicroservices.payload;
 
-
-
-
-
 public class Project {
 	
 	    private long id;

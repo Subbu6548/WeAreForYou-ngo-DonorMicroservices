@@ -62,13 +62,13 @@ public class DonorServiceImpl implements DonorService {
 	public DonorDto getDonorById(long id) 
 	{
 
-	Donor foundDonor = donorRepository.findById(id).get();
-	Response response = projectFeign.getProjectByCode(foundDonor.getDonor_project_code());
-	DonorDto donorDto = new DonorDto();
+	 Donor foundDonor = donorRepository.findById(id).get();
+	 Response response = projectFeign.getProjectByCode(foundDonor.getDonor_project_code());
+	 DonorDto donorDto = new DonorDto();
      String body=response.body().toString();
-   Gson g=new Gson();
-   Project project=g.fromJson(body,Project.class);
-	donorDto.setId(foundDonor.getId());
+     Gson g=new Gson();
+     Project project=g.fromJson(body,Project.class);
+	 donorDto.setId(foundDonor.getId());
 
 	donorDto.setDonorname(foundDonor.getDonor_name());
 
